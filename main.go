@@ -238,7 +238,7 @@ func getLessFile(fullpath string) string {
 		return "/* Less is not installed */"
 	}
 	// requires lessc binary
-	cmd := exec.Command(path, "--no-color", "--no-ie-compat", "--silent", "-su=off", "-sm=on", lessfile)
+	cmd := exec.Command(path, "--no-color", "--ie-compat=off", "--silent", "-su=off", "-sm=on", lessfile)
 	output, err := cmd.Output()
 	if err != nil {
 		return ""
